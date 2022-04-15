@@ -1,0 +1,22 @@
+{
+  "name": "library-online",
+  "version": "1.0.0",
+  "description": "Atividade de CRUD (sem U) da aula de desenv web com componentes",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "crud",
+    "library",
+    "activity",
+    "ts",
+    "node",
+    "vanilla"
+  ],
+  "author": "Raphael Menezes de Jesus",
+  "license": "ISC",
+  "dependencies": {
+    "amd": "^0.0.0"
+  }
+}

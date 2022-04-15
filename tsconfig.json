@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "module": "System",
+    "lib": ["DOM", "ES2017"],
+    "outFile": "./build/script.js",
+    "strict": true
+  },
+  "files": [
+    "./src/util/formatters.ts",
+    "./src/resources/Api.ts",
+    "./src/interfaces/Book.ts",
+    "./src/interfaces/InputLabelType.ts",
+    "./src/resources/Api.ts",
+    "./src/components/ParentDependent.ts",
+    "./src/components/Button.ts",
+    "./src/components/InputLabel.ts",
+    "./src/components/ListItem.ts",
+    "./src/components/Form.ts",
+    "./src/index.ts"
+  ]
+}
