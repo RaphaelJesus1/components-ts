@@ -6,6 +6,10 @@ class Api {
         "https://academico.espm.br/testeapi/livro/listar"
       );
 
+      if (!promise.ok) {
+        throw Error("API rejected the getting list of books action");
+      }
+
       const rawBookList: BookApiResponse[] = await promise.json();
 
       return rawBookList.map((book: BookApiResponse) => parseBook(book));
@@ -29,9 +33,15 @@ class Api {
     try {
       Api.apiProcessing = true;
       // -----------------------------
-      await fetch("https://academico.espm.br/testeapi/livro/criar", config);
+      const result = await fetch(
+        "https://academico.espm.br/testeapi/livro/criar",
+        config
+      );
       // -----------------------------
       Api.apiProcessing = false;
+      if (!result.ok) {
+        throw Error("API rejected the creation book action");
+      }
       return true;
     } catch (error) {
       Api.apiProcessing = false;
@@ -44,9 +54,14 @@ class Api {
     try {
       Api.apiProcessing = true;
       // -----------------------------
-      await fetch(`https://academico.espm.br/testeapi/livro/excluir/${id}`);
+      const result = await fetch(
+        `https://academico.espm.br/testeapi/livro/excluir/${id}`
+      );
       // -----------------------------
       Api.apiProcessing = false;
+      if (!result.ok) {
+        throw Error("API rejected the creation book action");
+      }
       return true;
     } catch (error) {
       Api.apiProcessing = false;
